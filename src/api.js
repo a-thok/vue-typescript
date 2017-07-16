@@ -4,7 +4,7 @@
 const isNode = process.env.RUNTIME === 'node';
 const fetch = isNode ? require('isomorphic-fetch') : window.fetch;
 
-let host = process.env.NODE_ENV === 'production' ? 'http://localhost:3000' : 'https://ts-vue-todo.herokuapp.com';
+var host = process.env.NODE_ENV === 'production' ? 'http://localhost:3000' : 'https://ts-vue-todo.herokuapp.com';
 
 exports.getTodos = function() {
   return fetch((isNode ? host : '') + '/todo')
